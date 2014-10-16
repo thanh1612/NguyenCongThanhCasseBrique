@@ -50,7 +50,8 @@ int trans=1;
 
 void update_game(int key)
 {
-  if ( oppo==1 && trans==1 && (x>1 || y>1)) 
+  //le ball va de gauche a droite//
+  if ( oppo==1 && trans==1 && (x>=1 || y>=1)) 
    {
      screen[x][y]='o';
      x++;
@@ -72,15 +73,16 @@ void update_game(int key)
 	}
       else trans=1;
     }
-  if (y==L-1) 
-    {
-      oppo=0;
-      x--;
-      y--;
-    }    
+  if (y==L-1)
+      {
+	oppo=0;
+	x--;
+	y--;
+      } 
   
   /***************************************************/
-
+  
+  //le ball va de droite a gauche//
   if ( oppo==0 && trans==1 && (x>1 || y<L-1))
     {
       screen[x][y]='o';
