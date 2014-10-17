@@ -72,14 +72,23 @@ void update_game(int key)
 	  y++;
 	}
       else trans=1;
-    }
-  if (y==L-1)
+    }   
+  if (y==L-1 && trans==1)
       {
 	oppo=0;
 	x--;
 	y--;
       } 
-  
+   
+  if (y==L-1 && trans==0)
+    {
+      oppo=0;
+      x++;
+      y--;
+    }
+
+
+
   /***************************************************/
   
   //le ball va de droite a gauche//
