@@ -50,78 +50,67 @@ int trans=1;
 
 void update_game(int key)
 {
-  //le ball va de gauche a droite//
-  if ( oppo==1 && trans==1 && (x>=1 || y>=1)) 
-   {
-     screen[x][y]='o';
-     x++;
-     y++;
-   }
-  if (x==H-1) 
+  if (oppo==1) //le ball va de gauche a droite//
     {
-      trans=0;
-      x--;
-      y--;
-    } 
-  if (oppo==1 && trans==0)
-    {
-      if (x>1 && y<L-1)
+      if (trans==1) //le ball va de haut a bas//
 	{
 	  screen[x][y]='o';
-	  x--;
-	  y++;
+	  x++; y++;
 	}
-      else trans=1;
-    }   
-  if (y==L-1 && trans==1)
-      {
-	oppo=0;
-	x--;
-	y--;
-      } 
-   
-  if (y==L-1 && trans==0)
-    {
-      oppo=0;
-      x++;
-      y--;
+      if (x==H-1) 
+	{ trans=0; x--; y--; } 
+      
+      if (trans==0) //le ball va de bas a haut// 
+	{
+	  screen[x][y]='o';
+	  x--; y++;
+	}
+      if (x==0)
+	{ trans=1; x=x+2; }
+      
+      if (y==L-1 && trans==1)
+	{	
+	  oppo=0;
+	  x--; y--;
+	} 
+      if (y==L-1 && trans==0)
+	{
+	  oppo=0;
+	  x++; y--;
+	}
     }
-
-
-
-  /***************************************************/
   
-  //le ball va de droite a gauche//
-  if ( oppo==0 && trans==1 && (x>1 || y<L-1))
+  
+  if (oppo==0)  //le ball va de droite a gauche//
     {
-      screen[x][y]='o';
-      x++;
-      y--;
-    }
-  if (x==H-1)
-    {
-      trans=0;
-      x--;
-      y++;    
-    }
-  if ( oppo==0 && trans==0)
-    {
-      if (x>1 && y>1)
+      if (trans==1)  //le ball va de haut a bas//
 	{
 	  screen[x][y]='o';
-	  x--;
-	  y--;
+	  x++; y--;
 	}
-      else trans=1;
-    }     
-  if (y==1)
-    {
-      oppo = 1;
-      x++;
-      y++;
+      if (x==H-1)
+	{ trans=0; x--; y++; }
+      
+      if (trans==0) //le ball va de bas a haut//
+	{
+	  screen[x][y]='o';
+	  x--; y--;
+	}
+      if (x==0)
+	{ trans=1; x=x+2; }
+      
+      if (y==0 && trans==1)
+	{
+	  oppo=1;
+	  y=y+2;
+	}
+      if (y==0 && trans==0)
+	{
+	  oppo=1;
+	  y=y+2;
+	}
     }
-}
-	
+}	
 /*****************************************************************************/
 
 int main()
