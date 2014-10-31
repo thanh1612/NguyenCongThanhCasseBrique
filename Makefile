@@ -1,2 +1,2 @@
-projet3: projet3.cc	
-	g++ -o projet3 projet3.cc			
+projet1: projet1.cc	
+	g++ -o projet1 projet1.cc			
