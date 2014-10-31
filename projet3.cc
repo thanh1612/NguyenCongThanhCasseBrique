@@ -160,7 +160,7 @@ void update_game(int key)
 }	
 /*****************************************************************************/
 
-int m=0; int n=14; bool begin=true;
+int m=0; int n=8; bool begin=true;
 void preparer() //faire la barre//
 {
   if (begin)
