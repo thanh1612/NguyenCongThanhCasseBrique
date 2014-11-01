@@ -25,7 +25,7 @@ void display()
   cout << " Appuyer sur le bouton 's' pour passer le niveau ensuite." << endl; 
   cout << " Appuyer sur le bouton 'q' pour quitter le jeux." << endl; 
   cout << endl;
-  if (level>1) cout << " Bravo!!! Tu passes level " << level-1 << '.' << endl << endl;;
+  if (level>1) cout << " Bravo!!! Tu est passes level " << level-1 << '!' << endl << endl;;
   cout << "             LEVEL " << level << endl;
   for (int i=0; i<H; i++) //faire le cadre//
     for (int j=0; j<L; j++)
