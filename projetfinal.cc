@@ -94,7 +94,7 @@ void update_game(int key)
 	      x-=2;
 	    }
 	  	  
-	  if (x==H+1) //fin du jeux//
+	  if (x==H) //fin du jeux//
 	    { cout << "YOU LOSE" <<endl;
 	      exit(0);
 	    }
@@ -131,7 +131,7 @@ void update_game(int key)
 	      x-=2;
 	    }
 	
-	  if (x==H+1)  //fin du jeux//
+	  if (x==H)  //fin du jeux//
 	  { cout << "YOU LOSE" <<endl;
 	    exit(0);
 	  }
